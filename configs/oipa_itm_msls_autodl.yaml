@@ -1,0 +1,17 @@
+reference: /root/autodl-tmp/OIPA-Net/study_msls_v1
+pe_loss_study: /root/autodl-tmp/OIPA-Net/study_msls_v1
+backbone_study: /root/autodl-tmp/OIPA-Net/study_msls_backbones_v1
+output: /root/autodl-tmp/OIPA-Net/study_msls_itm_v1
+scope: validation_best
+blip: /root/autodl-tmp/stet-r1-github/artifacts/blip-itm-base-coco
+published_visual_cache:
+  P0: /root/autodl-tmp/OIPA-Net/study_msls_itm_v1/cache/P0
+  P1: /root/autodl-tmp/OIPA-Net/study_msls_itm_v1/cache/P1
+evaluation:
+  candidates: 100
+  fusion_weights: [0, 2, 5, 10, 20, 50]
+  visual_batch_size: 64
+  pair_batch_size: 32
+  workers: 4
+  text_length: 64
+

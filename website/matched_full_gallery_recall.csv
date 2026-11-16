@@ -1,0 +1,145 @@
+Dataset,Protocol,Backbone,Configuration,Direction,Recall@1 (%),Recall@5 (%),Recall@10 (%)
+GSV-Cities,P0,CLIP,Zero-shot,T2I,2.13,5.61,8.77
+GSV-Cities,P0,CLIP,Zero-shot,I2T,3.63,9.54,13.62
+GSV-Cities,P1,CLIP,Zero-shot,T2I,0.42,1.51,2.46
+GSV-Cities,P1,CLIP,Zero-shot,I2T,0.92,2.66,4.09
+GSV-Cities,P0,BLIP,Zero-shot,T2I,4.08,10.01,13.72
+GSV-Cities,P0,BLIP,Zero-shot,I2T,4.41,11.01,16.04
+GSV-Cities,P1,BLIP,Zero-shot,T2I,1.14,3.30,4.97
+GSV-Cities,P1,BLIP,Zero-shot,I2T,1.11,3.28,4.92
+GSV-Cities,P0,SigLIP 2,Zero-shot,T2I,4.16,9.06,12.59
+GSV-Cities,P0,SigLIP 2,Zero-shot,I2T,5.32,11.34,15.93
+GSV-Cities,P1,SigLIP 2,Zero-shot,T2I,1.20,3.54,5.23
+GSV-Cities,P1,SigLIP 2,Zero-shot,I2T,1.42,3.72,5.30
+GSV-Cities,P0,PE-Core,Zero-shot,T2I,7.24,15.27,20.72
+GSV-Cities,P0,PE-Core,Zero-shot,I2T,9.21,20.04,26.03
+GSV-Cities,P1,PE-Core,Zero-shot,T2I,2.49,5.89,8.49
+GSV-Cities,P1,PE-Core,Zero-shot,I2T,2.66,6.62,9.28
+GSV-Cities,P0,CLIP,Residual heads + MS,T2I,7.17,19.07,27.14
+GSV-Cities,P0,CLIP,Residual heads + MS,I2T,9.56,22.20,30.23
+GSV-Cities,P1,CLIP,Residual heads + MS,T2I,1.67,4.80,7.41
+GSV-Cities,P1,CLIP,Residual heads + MS,I2T,2.16,6.08,9.08
+GSV-Cities,P0,BLIP,Residual heads + MS,T2I,9.41,21.41,28.95
+GSV-Cities,P0,BLIP,Residual heads + MS,I2T,11.74,24.78,33.44
+GSV-Cities,P1,BLIP,Residual heads + MS,T2I,2.59,6.81,9.87
+GSV-Cities,P1,BLIP,Residual heads + MS,I2T,2.94,8.16,11.97
+GSV-Cities,P0,SigLIP 2,Residual heads + MS,T2I,9.28,22.13,30.62
+GSV-Cities,P0,SigLIP 2,Residual heads + MS,I2T,12.70,28.45,37.92
+GSV-Cities,P1,SigLIP 2,Residual heads + MS,T2I,2.53,6.75,10.04
+GSV-Cities,P1,SigLIP 2,Residual heads + MS,I2T,2.82,8.06,12.20
+GSV-Cities,P0,PE-Core,Residual heads + MS,T2I,13.29,27.80,37.11
+GSV-Cities,P0,PE-Core,Residual heads + MS,I2T,17.07,34.92,44.64
+GSV-Cities,P1,PE-Core,Residual heads + MS,T2I,3.65,9.37,13.34
+GSV-Cities,P1,PE-Core,Residual heads + MS,I2T,4.52,11.19,15.84
+GSV-Cities,P0,CLIP,Q/V LoRA + heads + MS,T2I,12.40,28.19,37.28
+GSV-Cities,P0,CLIP,Q/V LoRA + heads + MS,I2T,16.46,33.42,43.48
+GSV-Cities,P1,CLIP,Q/V LoRA + heads + MS,T2I,3.51,9.38,13.57
+GSV-Cities,P1,CLIP,Q/V LoRA + heads + MS,I2T,4.49,11.57,16.39
+GSV-Cities,P0,BLIP,Q/V LoRA + heads + MS,T2I,14.45,29.61,37.86
+GSV-Cities,P0,BLIP,Q/V LoRA + heads + MS,I2T,18.22,35.19,45.03
+GSV-Cities,P1,BLIP,Q/V LoRA + heads + MS,T2I,4.59,11.11,15.62
+GSV-Cities,P1,BLIP,Q/V LoRA + heads + MS,I2T,5.41,13.28,18.65
+GSV-Cities,P0,SigLIP 2,Q/V LoRA + heads + MS,T2I,15.13,30.74,39.99
+GSV-Cities,P0,SigLIP 2,Q/V LoRA + heads + MS,I2T,18.98,37.90,47.61
+GSV-Cities,P1,SigLIP 2,Q/V LoRA + heads + MS,T2I,4.55,11.40,16.08
+GSV-Cities,P1,SigLIP 2,Q/V LoRA + heads + MS,I2T,5.86,14.17,19.84
+GSV-Cities,P0,PE-Core,Q/V LoRA + heads + MS,T2I,19.27,36.48,45.93
+GSV-Cities,P0,PE-Core,Q/V LoRA + heads + MS,I2T,24.02,43.92,53.38
+GSV-Cities,P1,PE-Core,Q/V LoRA + heads + MS,T2I,6.60,14.92,20.52
+GSV-Cities,P1,PE-Core,Q/V LoRA + heads + MS,I2T,7.96,17.88,24.15
+MSLS-derived,P0,CLIP,Zero-shot,T2I,1.67,6.41,10.06
+MSLS-derived,P0,CLIP,Zero-shot,I2T,2.02,5.40,7.98
+MSLS-derived,P1,CLIP,Zero-shot,T2I,0.81,3.03,5.26
+MSLS-derived,P1,CLIP,Zero-shot,I2T,0.77,2.60,4.29
+MSLS-derived,P0,BLIP,Zero-shot,T2I,2.44,7.56,11.79
+MSLS-derived,P0,BLIP,Zero-shot,I2T,1.77,6.05,8.79
+MSLS-derived,P1,BLIP,Zero-shot,T2I,1.18,4.50,7.58
+MSLS-derived,P1,BLIP,Zero-shot,I2T,0.61,2.76,4.29
+MSLS-derived,P0,SigLIP 2,Zero-shot,T2I,2.05,6.22,9.62
+MSLS-derived,P0,SigLIP 2,Zero-shot,I2T,2.18,7.10,10.56
+MSLS-derived,P1,SigLIP 2,Zero-shot,T2I,0.81,2.89,5.83
+MSLS-derived,P1,SigLIP 2,Zero-shot,I2T,0.51,2.91,5.26
+MSLS-derived,P0,PE-Core,Zero-shot,T2I,3.46,8.72,14.10
+MSLS-derived,P0,PE-Core,Zero-shot,I2T,2.50,8.63,12.90
+MSLS-derived,P1,PE-Core,Zero-shot,T2I,1.14,5.16,8.57
+MSLS-derived,P1,PE-Core,Zero-shot,I2T,0.97,3.62,5.36
+MSLS-derived,P0,CLIP,Residual heads + MS,T2I,2.99,10.15,14.70
+MSLS-derived,P0,CLIP,Residual heads + MS,I2T,2.47,8.20,14.44
+MSLS-derived,P1,CLIP,Residual heads + MS,T2I,1.01,4.14,7.36
+MSLS-derived,P1,CLIP,Residual heads + MS,I2T,0.97,3.76,6.96
+MSLS-derived,P0,BLIP,Residual heads + MS,T2I,3.40,10.41,16.07
+MSLS-derived,P0,BLIP,Residual heads + MS,I2T,3.68,9.92,15.38
+MSLS-derived,P1,BLIP,Residual heads + MS,T2I,1.45,5.64,9.05
+MSLS-derived,P1,BLIP,Residual heads + MS,I2T,1.79,5.49,9.86
+MSLS-derived,P0,SigLIP 2,Residual heads + MS,T2I,2.59,9.44,14.32
+MSLS-derived,P0,SigLIP 2,Residual heads + MS,I2T,1.96,8.95,14.81
+MSLS-derived,P1,SigLIP 2,Residual heads + MS,T2I,0.96,4.17,7.47
+MSLS-derived,P1,SigLIP 2,Residual heads + MS,I2T,1.07,4.30,7.50
+MSLS-derived,P0,PE-Core,Residual heads + MS,T2I,3.68,13.95,20.21
+MSLS-derived,P0,PE-Core,Residual heads + MS,I2T,4.25,13.01,20.27
+MSLS-derived,P1,PE-Core,Residual heads + MS,T2I,1.09,5.16,9.32
+MSLS-derived,P1,PE-Core,Residual heads + MS,I2T,1.58,6.45,10.92
+MSLS-derived,P0,CLIP,Q/V LoRA + heads + MS,T2I,2.91,11.69,18.48
+MSLS-derived,P0,CLIP,Q/V LoRA + heads + MS,I2T,3.76,11.88,17.96
+MSLS-derived,P1,CLIP,Q/V LoRA + heads + MS,T2I,1.66,5.04,8.92
+MSLS-derived,P1,CLIP,Q/V LoRA + heads + MS,I2T,1.43,5.22,9.54
+MSLS-derived,P0,BLIP,Q/V LoRA + heads + MS,T2I,3.25,12.52,19.40
+MSLS-derived,P0,BLIP,Q/V LoRA + heads + MS,I2T,4.57,13.25,19.49
+MSLS-derived,P1,BLIP,Q/V LoRA + heads + MS,T2I,1.58,6.65,10.80
+MSLS-derived,P1,BLIP,Q/V LoRA + heads + MS,I2T,2.09,7.18,12.06
+MSLS-derived,P0,SigLIP 2,Q/V LoRA + heads + MS,T2I,3.50,12.46,20.06
+MSLS-derived,P0,SigLIP 2,Q/V LoRA + heads + MS,I2T,3.47,13.17,20.73
+MSLS-derived,P1,SigLIP 2,Q/V LoRA + heads + MS,T2I,1.75,7.01,11.31
+MSLS-derived,P1,SigLIP 2,Q/V LoRA + heads + MS,I2T,2.11,6.90,10.99
+MSLS-derived,P0,PE-Core,Q/V LoRA + heads + MS,T2I,6.05,16.92,25.04
+MSLS-derived,P0,PE-Core,Q/V LoRA + heads + MS,I2T,5.51,16.37,24.27
+MSLS-derived,P1,PE-Core,Q/V LoRA + heads + MS,T2I,2.16,7.47,12.52
+MSLS-derived,P1,PE-Core,Q/V LoRA + heads + MS,I2T,2.47,8.01,13.35
+SF-XL-derived,P0,CLIP,Zero-shot,T2I,1.80,6.39,10.41
+SF-XL-derived,P0,CLIP,Zero-shot,I2T,2.41,7.55,10.77
+SF-XL-derived,P1-region,CLIP,Zero-shot,T2I,1.53,5.67,8.71
+SF-XL-derived,P1-region,CLIP,Zero-shot,I2T,1.87,6.66,9.94
+SF-XL-derived,P0,BLIP,Zero-shot,T2I,3.50,9.38,13.67
+SF-XL-derived,P0,BLIP,Zero-shot,I2T,3.64,10.14,15.05
+SF-XL-derived,P1-region,BLIP,Zero-shot,T2I,3.48,8.61,12.37
+SF-XL-derived,P1-region,BLIP,Zero-shot,I2T,3.50,10.53,15.38
+SF-XL-derived,P0,SigLIP 2,Zero-shot,T2I,3.74,10.62,14.43
+SF-XL-derived,P0,SigLIP 2,Zero-shot,I2T,4.18,11.59,16.50
+SF-XL-derived,P1-region,SigLIP 2,Zero-shot,T2I,3.50,9.70,13.80
+SF-XL-derived,P1-region,SigLIP 2,Zero-shot,I2T,4.12,10.25,14.62
+SF-XL-derived,P0,PE-Core,Zero-shot,T2I,6.18,15.16,20.43
+SF-XL-derived,P0,PE-Core,Zero-shot,I2T,7.55,17.82,24.09
+SF-XL-derived,P1-region,PE-Core,Zero-shot,T2I,5.69,13.64,19.25
+SF-XL-derived,P1-region,PE-Core,Zero-shot,I2T,5.81,13.78,18.91
+SF-XL-derived,P0,CLIP,Residual heads + MS,T2I,4.04,13.65,20.59
+SF-XL-derived,P0,CLIP,Residual heads + MS,I2T,5.41,16.79,24.73
+SF-XL-derived,P1-region,CLIP,Residual heads + MS,T2I,3.21,10.62,15.93
+SF-XL-derived,P1-region,CLIP,Residual heads + MS,I2T,4.29,13.35,18.90
+SF-XL-derived,P0,BLIP,Residual heads + MS,T2I,6.04,16.69,23.97
+SF-XL-derived,P0,BLIP,Residual heads + MS,I2T,8.32,22.76,30.98
+SF-XL-derived,P1-region,BLIP,Residual heads + MS,T2I,5.30,14.81,20.77
+SF-XL-derived,P1-region,BLIP,Residual heads + MS,I2T,7.61,19.02,26.11
+SF-XL-derived,P0,SigLIP 2,Residual heads + MS,T2I,6.09,17.24,24.32
+SF-XL-derived,P0,SigLIP 2,Residual heads + MS,I2T,8.00,23.58,32.71
+SF-XL-derived,P1-region,SigLIP 2,Residual heads + MS,T2I,4.80,13.35,19.31
+SF-XL-derived,P1-region,SigLIP 2,Residual heads + MS,I2T,6.54,17.44,24.97
+SF-XL-derived,P0,PE-Core,Residual heads + MS,T2I,9.10,24.25,33.48
+SF-XL-derived,P0,PE-Core,Residual heads + MS,I2T,12.88,31.88,42.35
+SF-XL-derived,P1-region,PE-Core,Residual heads + MS,T2I,6.92,18.82,25.85
+SF-XL-derived,P1-region,PE-Core,Residual heads + MS,I2T,9.90,24.09,34.17
+SF-XL-derived,P0,CLIP,Q/V LoRA + heads + MS,T2I,7.44,21.81,31.11
+SF-XL-derived,P0,CLIP,Q/V LoRA + heads + MS,I2T,10.98,28.97,39.71
+SF-XL-derived,P1-region,CLIP,Q/V LoRA + heads + MS,T2I,6.60,17.58,24.98
+SF-XL-derived,P1-region,CLIP,Q/V LoRA + heads + MS,I2T,8.14,23.00,32.55
+SF-XL-derived,P0,BLIP,Q/V LoRA + heads + MS,T2I,9.58,25.55,34.87
+SF-XL-derived,P0,BLIP,Q/V LoRA + heads + MS,I2T,13.41,32.27,42.44
+SF-XL-derived,P1-region,BLIP,Q/V LoRA + heads + MS,T2I,8.12,20.53,28.48
+SF-XL-derived,P1-region,BLIP,Q/V LoRA + heads + MS,I2T,12.16,27.39,37.27
+SF-XL-derived,P0,SigLIP 2,Q/V LoRA + heads + MS,T2I,9.36,25.73,34.92
+SF-XL-derived,P0,SigLIP 2,Q/V LoRA + heads + MS,I2T,15.24,35.09,44.94
+SF-XL-derived,P1-region,SigLIP 2,Q/V LoRA + heads + MS,T2I,7.62,20.06,28.17
+SF-XL-derived,P1-region,SigLIP 2,Q/V LoRA + heads + MS,I2T,11.74,28.25,38.24
+SF-XL-derived,P0,PE-Core,Q/V LoRA + heads + MS,T2I,12.64,32.17,43.04
+SF-XL-derived,P0,PE-Core,Q/V LoRA + heads + MS,I2T,18.17,40.24,52.74
+SF-XL-derived,P1-region,PE-Core,Q/V LoRA + heads + MS,T2I,10.02,25.51,34.27
+SF-XL-derived,P1-region,PE-Core,Q/V LoRA + heads + MS,I2T,13.67,32.98,43.43

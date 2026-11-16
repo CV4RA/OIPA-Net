@@ -1,0 +1,161 @@
+[
+  {
+    "dataset": "gsv-cities",
+    "archive": "oipa-net-gsv-cities-formal.tar.gz",
+    "sha256": "f14a2cf56805b1035dd5e8f34b4f5464f512236288a33e0f2b93112d62ecaa1f",
+    "bytes": 235824775,
+    "files": 21,
+    "upstream": "https://github.com/amaralibey/gsv-cities",
+    "protocols": {
+      "P0": {
+        "fingerprint": "0aa126e367f28be0b4f63356081c55dc9c3525c99cd70ba81a5689dd9aa06d4a",
+        "splits": {
+          "train": {
+            "places": 54009,
+            "texts": 149126,
+            "gallery_images": 107970
+          },
+          "val": {
+            "places": 1355,
+            "texts": 3876,
+            "gallery_images": 2710
+          },
+          "test": {
+            "places": 1362,
+            "texts": 3798,
+            "gallery_images": 2724
+          }
+        },
+        "manifest_sha256": "09c128f2016cb7f9a26dede04bf5657ec6c6c53144cd9b98c95c54c12b893ec4"
+      },
+      "P1": {
+        "fingerprint": "fa9e4fe583d0e364883aa4a9629caf287e31d50e4f6a52babbbe476d7e430378",
+        "splits": {
+          "train": {
+            "places": 39706,
+            "texts": 109809,
+            "gallery_images": 79390
+          },
+          "val": {
+            "places": 8511,
+            "texts": 23622,
+            "gallery_images": 17000
+          },
+          "test": {
+            "places": 8509,
+            "texts": 23369,
+            "gallery_images": 17014
+          }
+        },
+        "manifest_sha256": "b5007d418fd8db1ba196714bd420570e2f30763ca8754f502a788c1d73d7efc1"
+      }
+    },
+    "contents": "Formal manifests, splits, captions, and retrieval lists"
+  },
+  {
+    "dataset": "msls-derived",
+    "archive": "oipa-net-msls-derived-formal.tar.gz",
+    "sha256": "4d0c5e149a2bf39b82fb00ec42d0b4eb157ac21d495d5afa0f9266bcd271b6c2",
+    "bytes": 37822418,
+    "files": 38,
+    "upstream": "https://www.mapillary.com/dataset/places",
+    "protocols": {
+      "P0": {
+        "fingerprint": "b9b1764c06abec8f72b958392b7a1bdc2a8afa8d5add54ef80ecee52b6b6b3f9",
+        "splits": {
+          "train": {
+            "places": 5217,
+            "texts": 12054,
+            "gallery_images": 10434
+          },
+          "val": {
+            "places": 717,
+            "texts": 1744,
+            "gallery_images": 1434
+          },
+          "test": {
+            "places": 620,
+            "texts": 1560,
+            "gallery_images": 1240
+          }
+        },
+        "manifest_sha256": "85dfa55989d447f1bbae6943bcd58803764b4ca5ba0292f339d9e6d4eaaf48a0"
+      },
+      "P1": {
+        "fingerprint": "1b88e0f7ba0fd9ff80e2b8e34b53bc105059ea8ae3e7dc5a654c7d302cb351ac",
+        "splits": {
+          "train": {
+            "places": 4604,
+            "texts": 10978,
+            "gallery_images": 9208
+          },
+          "val": {
+            "places": 970,
+            "texts": 2269,
+            "gallery_images": 1940
+          },
+          "test": {
+            "places": 980,
+            "texts": 2111,
+            "gallery_images": 1960
+          }
+        },
+        "manifest_sha256": "6e723165f89ae3d989ad58b857dceeec2e735bef7dc787e473b545a31a512514"
+      }
+    },
+    "contents": "Formal manifests, splits, captions, and retrieval lists"
+  },
+  {
+    "dataset": "sf-xl-derived",
+    "archive": "oipa-net-sf-xl-derived-formal.tar.gz",
+    "sha256": "916502f98dd04b2746efda0de27e26da6df6750c4c4748ac02939b25ced2841d",
+    "bytes": 68947996,
+    "files": 38,
+    "upstream": "https://github.com/gmberton/CosPlace",
+    "protocols": {
+      "P0": {
+        "fingerprint": "7bdeaef1ad07b1bde3fd15e88a4f70c9ac52933e8089a94cd4e1d60721833d4c",
+        "splits": {
+          "train": {
+            "places": 8765,
+            "texts": 26600,
+            "gallery_images": 17530
+          },
+          "val": {
+            "places": 1086,
+            "texts": 3269,
+            "gallery_images": 2172
+          },
+          "test": {
+            "places": 1100,
+            "texts": 3285,
+            "gallery_images": 2200
+          }
+        },
+        "manifest_sha256": "29eb62df2ba873cdbfe5d804646bcd6855033764eeae3a6f3218c440b1f6aa49"
+      },
+      "P1-region": {
+        "fingerprint": "8e37e9b46ce9e55c3c54538bce1daa0ff9d4d3c711daa16cade6a2800afb53fc",
+        "splits": {
+          "train": {
+            "places": 7720,
+            "texts": 23480,
+            "gallery_images": 15440
+          },
+          "val": {
+            "places": 1631,
+            "texts": 4703,
+            "gallery_images": 3262
+          },
+          "test": {
+            "places": 1600,
+            "texts": 4971,
+            "gallery_images": 3200
+          }
+        },
+        "manifest_sha256": "bad820db47892aaedb85df6984041b0bf718ae09e357aea73ecfaf734f4d7842"
+      }
+    },
+    "contents": "Formal manifests, splits, captions, and retrieval lists"
+  }
+]

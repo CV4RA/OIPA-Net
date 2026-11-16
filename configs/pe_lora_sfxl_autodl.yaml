@@ -1,0 +1,13 @@
+reference: /root/autodl-tmp/OIPA-Net/study_sfxl_v1
+control: /root/autodl-tmp/OIPA-Net/study_sfxl_v1
+output: /root/autodl-tmp/OIPA-Net/study_sfxl_pe_lora_v1
+lora:
+  layers: 4
+  rank: 8
+  alpha: 16
+  checkpoint_blocks: true
+lora_lr: 0.0001
+save_every: 100
+train_image_microbatch: 32
+encode_batch_size: 32
+

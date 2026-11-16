@@ -1,0 +1,17 @@
+{
+  "protocols": {
+    "P0": {
+      "fingerprint": "7bdeaef1ad07b1bde3fd15e88a4f70c9ac52933e8089a94cd4e1d60721833d4c"
+    },
+    "P1-region": {
+      "fingerprint": "8e37e9b46ce9e55c3c54538bce1daa0ff9d4d3c711daa16cade6a2800afb53fc"
+    }
+  },
+  "gallery_seeds": [
+    2027,
+    2028,
+    2029,
+    2030,
+    2031
+  ]
+}

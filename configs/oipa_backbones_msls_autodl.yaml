@@ -1,0 +1,14 @@
+reference: /root/autodl-tmp/OIPA-Net/study_msls_v1
+output: /root/autodl-tmp/OIPA-Net/study_msls_backbones_v1
+backbones:
+  SigLIP2:
+    directory: /root/autodl-tmp/stet-r1-github/artifacts/siglip2-base-patch16-384
+    kind: siglip
+  BLIP:
+    directory: /root/autodl-tmp/stet-r1-github/artifacts/blip-itm-base-coco
+    kind: blip
+    text_length: 64
+  CLIP:
+    directory: /root/autodl-tmp/cvpr2027/models/clip-vit-base-patch16
+    kind: clip
+

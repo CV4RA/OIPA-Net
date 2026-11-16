@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OIPA-Net, a dual-encoder framework and three-dataset benchmark for cross-observation vision–language place retrieval.">
+  <meta name="theme-color" content="#0c141a">
+  <title>OIPA-Net · Beyond individual observations</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="explorer.js" defer></script>
+</head>
+<body>
+  <header class="shell masthead">
+    <a class="brand" href="#top"><span aria-hidden="true">◈</span> OIPA-Net</a>
+    <nav aria-label="Site navigation">
+      <a href="#results">Results</a><a href="#method">Method</a><a href="#data">Data</a>
+    </nav>
+    <a class="repo" href="https://github.com/CV4RA/OIPA-Net">GitHub ↗</a>
+  </header>
+  <main class="shell" id="top">
+    <section class="hero" aria-labelledby="headline">
+      <div>
+        <p class="eyebrow"><span></span> Cross-view vision–language retrieval</p>
+        <h1 id="headline">Beyond individual <em>observations.</em></h1>
+        <p class="lead">Can a description grounded in one street view retrieve a different image of the same place? OIPA-Net studies that question with independent observations across three street-level datasets.</p>
+        <div class="actions">
+          <a class="button primary" href="#results">Explore measured results ↓</a>
+          <a class="button" href="https://github.com/CV4RA/OIPA-Net#2-environment">Reproduce ↗</a>
+        </div>
+      </div>
+      <figure class="atlas">
+        <svg viewBox="0 0 560 428" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">From a source description to a different view of the same place</title>
+          <desc id="diagram-desc">An illustrative street grid connecting a source view and an independent target view.</desc>
+          <defs>
+            <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#273943" stroke-width="1"/></pattern>
+            <radialGradient id="glow"><stop stop-color="#176155"/><stop offset="1" stop-color="#132027"/></radialGradient>
+          </defs>
+          <rect width="560" height="428" fill="url(#glow)"/>
+          <rect width="560" height="428" fill="url(#grid)" opacity=".72"/>
+          <g transform="rotate(-18 280 214)" fill="none" stroke="#526b72" stroke-opacity=".63">
+            <path stroke-width="3" d="M-10 54h580M-10 105h580M-10 155h580M-10 208h580M-10 264h580M-10 314h580M-10 363h580M-10 414h580M25-40v510M78-40v510M130-40v510M183-40v510M235-40v510M290-40v510M342-40v510M395-40v510M448-40v510M501-40v510M554-40v510"/>
+            <path stroke-width="1" d="M-10 80h580M-10 180h580M-10 290h580M-10 388h580M106-40v510M207-40v510M316-40v510M419-40v510M529-40v510"/>
+            <path stroke="#b5e774" stroke-opacity="1" stroke-width="3" stroke-dasharray="5 7" d="M130 314v-50h105v-56h107v-53h53"/>
+            <g stroke="#b5e774" stroke-opacity="1" fill="#152c24">
+              <circle cx="130" cy="314" r="18"/><circle cx="395" cy="155" r="18"/>
+              <circle cx="130" cy="314" r="7" fill="#b5e774"/><circle cx="395" cy="155" r="7" fill="#b5e774"/>
+            </g>
+          </g>
+          <g fill="#e0ebed" font-family="monospace" font-size="14" letter-spacing="1">
+            <text x="23" y="31">T2I / I2T</text><text x="134" y="384">SOURCE VIEW</text>
+            <text x="318" y="116">INDEPENDENT TARGET</text>
+          </g>
+        </svg>
+        <figcaption>Independent observations, shared place identity.</figcaption>
+      </figure>
+    </section>
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="section-head"><div><p class="eyebrow">Full-gallery evaluation</p><h2 id="results-title">Results explorer</h2></div>
+      <a href="matched_full_gallery_recall.csv" download>Download data ↓</a></div>
+      <div class="panel">
+        <form class="filters" aria-label="Filter the archived results">
+          <label>Dataset<select id="dataset"><option>GSV-Cities</option><option>MSLS-derived</option><option>SF-XL-derived</option></select></label>
+          <label>Protocol<select id="protocol"><option>P0</option><option>P1</option></select></label>
+          <label>Direction<select id="direction"><option>T2I</option><option>I2T</option></select></label>
+          <label>Metric<select id="metric"><option value="1">Recall@1</option><option value="5">Recall@5</option><option value="10">Recall@10</option></select></label>
+        </form>
+        <p id="legend" class="legend"></p>
+        <div id="chart" class="chart" aria-live="polite" aria-label="Recall in percent">Loading archived measurements…</div>
+        <p class="note">Adapted configurations are averaged over seeds 42, 43, and 44. The explorer shows coarse full-gallery ranking.</p>
+      </div>
+    </section>
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="section-head"><div><p class="eyebrow">The dual encoder</p><h2 id="method-title">Learning from independent views</h2></div></div>
+      <div class="cards">
+        <article><p class="eyebrow">Vision</p><h3>View-stable aggregation</h3><p>Local visual regions contribute to a global descriptor. During training, the regional residual is supervised with same-place observations.</p></article>
+        <article><p class="eyebrow">Language</p><h3>Evidence-aware weighting</h3><p>Learned token weights emphasize description evidence that agrees across training observations of a place.</p></article>
+        <article><p class="eyebrow">Metric learning</p><h3>Place-aware negatives</h3><p>The miner chooses similar different-place items. Every same-place observation remains a positive.</p></article>
+      </div>
+    </section>
+    <section class="section" id="data" aria-labelledby="data-title">
+      <div class="section-head"><div><p class="eyebrow">The benchmark</p><h2 id="data-title">Three datasets, matched evaluation</h2></div></div>
+      <div class="cards datasets">
+        <article><h3>GSV-Cities</h3><p>P0 place holdout · P1 city holdout</p><a href="https://github.com/amaralibey/gsv-cities">Imagery source ↗</a></article>
+        <article><h3>MSLS-derived</h3><p>P0 place holdout · P1 city holdout</p><a href="https://www.mapillary.com/dataset/places">Imagery source ↗</a></article>
+        <article><h3>SF-XL-derived</h3><p>P0 place holdout · P1-region buffered holdout</p><a href="https://github.com/gmberton/CosPlace">Imagery source ↗</a></article>
+      </div>
+      <p class="note">D1 measures source-to-target transfer. D2 varies gallery size. D3 compares matched language-evidence groups.</p>
+      <div class="actions">
+        <a class="button primary" href="https://drive.google.com/drive/folders/1AJGTxcmHjqnc90nchQL6EeYIPeEXKuDR">Protocol archives ↗</a>
+        <a class="button" href="https://github.com/CV4RA/OIPA-Net/tree/main/data-release">Checksums ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><a class="brand" href="#top">◈ OIPA-Net</a><a href="https://github.com/CV4RA/OIPA-Net">Source and reproducibility ↗</a></footer>
+</body>
+</html>

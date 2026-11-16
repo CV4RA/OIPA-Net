@@ -1,0 +1,12 @@
+reference: /root/autodl-tmp/OIPA-Net/study_v1
+output: /root/autodl-tmp/OIPA-Net/study_loss_v2
+recipes:
+  B1_MS:
+    architecture: B1
+    loss: ms
+  AB_Place:
+    architecture: AB
+    loss: place
+  AB_MS:
+    architecture: AB
+    loss: ms

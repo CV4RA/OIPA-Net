@@ -1,0 +1,44 @@
+device: cuda
+cpu_threads: 8
+output: /root/autodl-tmp/OIPA-Net/study_msls_v1
+checkpoint: /root/autodl-tmp/OIPA-Net/PE-Core-L14-336.pt
+protocols:
+  P0: /root/autodl-tmp/msls_acrossplace/formal/P0
+  P1: /root/autodl-tmp/msls_acrossplace/formal/P1
+data:
+  image_root: /root/autodl-tmp/msls_acrossplace/full
+  canonical_prefix: /root/autodl-tmp/msls_acrossplace/full
+protocol_fingerprints:
+  P0: b9b1764c06abec8f72b958392b7a1bdc2a8afa8d5add54ef80ecee52b6b6b3f9
+  P1: 1b88e0f7ba0fd9ff80e2b8e34b53bc105059ea8ae3e7dc5a654c7d302cb351ac
+methods: [B0, B1, B2, B3, B4, B1_MS, AB_Place, AB_MS]
+recipes:
+  B1_MS: {architecture: B1, loss: ms}
+  AB_Place: {architecture: AB, loss: place}
+  AB_MS: {architecture: AB, loss: ms}
+seeds: [42, 43, 44]
+training:
+  epochs: 3
+  places_per_batch: 16
+  images_per_place: 2
+  texts_per_place: 4
+  head_lr: 0.0001
+  weight_decay: 0.01
+  temperature: 0.07
+  tolerance_m: 25
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+oipa:
+  region_grid: 4
+  rank: 64
+  view_weight: 0.1
+  evidence_weight: 0.1
+  negative_weight: 0.1
+  hard_k: 4
+  hard_margin: 0.05
+evaluation:
+  encode_batch_size: 32
+  workers: 6
+diagnostics:
+  archive_plan: configs/msls_diagnostics.json
+  sizes: {matched_places: 600, query_places: 500}
