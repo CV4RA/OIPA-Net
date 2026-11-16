@@ -26,20 +26,28 @@ def archived_images(config):
     for protocol in config["protocols"].values():
         with (Path(protocol) / "valid.jsonl").open(encoding="utf-8") as rows:
             for line in rows:
-                row = json.loads(line)
-                relative = PurePosixPath(row["path"]).relative_to(prefix)
-                fingerprint = row["sha256"]
-                if relative in seen:
-                    if seen[relative] != fingerprint:
-                        raise ValueError(f"Conflicting SHA-256 for {relative}")
-                    continue
-                seen[relative] = fingerprint
-                yield relative, PurePosixPath(row.get("archive_member") or relative), fingerprint
+                for image in json.loads(line)["images"]:
+                    relative = PurePosixPath(image["path"]).relative_to(prefix)
+                    fingerprint = image["sha256"]
+                    if relative in seen:
+                        if seen[relative] != fingerprint:
+                            raise ValueError(f"Conflicting SHA-256 for {relative}")
+                        continue
+                    seen[relative] = fingerprint
+                    yield relative, PurePosixPath(image.get("archive_member") or relative), fingerprint
 
 
 def file_hash(path):
     with path.open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def open_source(archive, source_root, relative, member):
+    if archive:
+        canonical = relative.as_posix()
+        return archive.open(canonical if canonical in archive.NameToInfo else member.as_posix())
+    canonical = contained(source_root, relative)
+    return (canonical if canonical.is_file() else contained(source_root, member)).open("rb")
 
 
 def stage(args):
@@ -56,7 +64,7 @@ def stage(args):
             if not (archive or source_root):
                 raise ValueError(f"Missing or mismatched image: {target}")
             target.parent.mkdir(parents=True, exist_ok=True)
-            source = archive.open(member.as_posix()) if archive else contained(source_root, member).open("rb")
+            source = open_source(archive, source_root, relative, member)
             with source, NamedTemporaryFile(dir=target.parent, delete=False) as temporary:
                 candidate = Path(temporary.name)
                 try:
@@ -75,6 +83,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True, type=Path)
     source = parser.add_mutually_exclusive_group()
-    source.add_argument("--archive", type=Path, help="ZIP with paths matching archive_member")
-    source.add_argument("--upstream-root", type=Path, help="Extracted tree matching archive_member")
+    source.add_argument("--archive", type=Path, help="ZIP with canonical relative paths or archive_member paths")
+    source.add_argument("--upstream-root", type=Path, help="Extracted tree with canonical or upstream paths")
     stage(parser.parse_args())

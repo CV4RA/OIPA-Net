@@ -2,7 +2,7 @@
 
 **Observation-Informed Place Alignment for vision–language place retrieval**
 
-[Project website](https://oipa-net.ornatesparrow2.chatgpt.site/) · [Dataset archives on Google Drive](https://drive.google.com/drive/folders/1AJGTxcmHjqnc90nchQL6EeYIPeEXKuDR) · [Results](results/oipa_net/) · [Data manifest](data-release/release-manifest.json)
+[Project website](https://oipa-net.ornatesparrow2.chatgpt.site/) · [Results](results/oipa_net/) · [Data manifest](data-release/release-manifest.json)
 
 OIPA-Net studies whether a description grounded in one street-level observation can retrieve an independent view of the same place. It pairs a modular dual encoder with a shared evaluation across GSV-Cities, MSLS-derived, and SF-XL-derived benchmarks. Image-gallery items and text queries are encoded independently. Place identities define all positive matches in both retrieval directions.
 
@@ -49,15 +49,16 @@ Pretrained weights are downloaded from their publishers. The PE study verifies t
 
 | Dataset | Formal protocols | Upstream imagery |
 | --- | --- | --- |
-| GSV-Cities | P0 place-disjoint, P1 city holdout | [GSV-Cities](https://github.com/amaralibey/gsv-cities) · [Original protocol bundle](https://drive.google.com/file/d/13639QpS-GX7ZeibqKaxd45dHxIo5Cf5W/view?usp=drive_link) |
+| GSV-Cities | P0 place-disjoint, P1 city holdout | [GSV-Cities](https://github.com/amaralibey/gsv-cities) · [Original protocol release](https://github.com/CV4RA/AcrossPlace/tree/2a66c25f3a241c2af93eae9dbde658f3e19cde67) |
 | MSLS-derived | P0 place-disjoint, P1 city holdout | [Mapillary Street-Level Sequences](https://www.mapillary.com/dataset/places) |
 | SF-XL-derived | P0 place-disjoint, P1-region buffered region holdout | [SF-XL from CosPlace](https://github.com/gmberton/CosPlace) |
 
-Download the three metadata archives from the [release folder](https://drive.google.com/drive/folders/1AJGTxcmHjqnc90nchQL6EeYIPeEXKuDR). The folder uses the maintainer's Google Drive access settings. The archives contain frozen split manifests, source descriptions, image metadata, and bidirectional query and gallery lists. Street-view image bytes are acquired separately under the original dataset terms. Each image hash is tied to the experiment version.
+Obtain the three metadata archives through the Protocol archives link on the [project website](https://oipa-net.ornatesparrow2.chatgpt.site/#data) or from the maintainer. The archives contain frozen split manifests, source descriptions, image metadata, and bidirectional query and gallery lists. Street-view image bytes are acquired separately under the original dataset terms. Each image hash is tied to the experiment version.
 
 ```bash
 download_dir="$HOME/Downloads/oipa-net"
-(cd "$download_dir" && sha256sum -c /absolute/path/to/OIPA-Net/data-release/SHA256SUMS)
+release_checksums="$PWD/data-release/SHA256SUMS"
+(cd "$download_dir" && sha256sum -c "$release_checksums")
 mkdir -p datasets
 for dataset in gsv-cities msls-derived sf-xl-derived; do
   tar -xzf "$download_dir/oipa-net-$dataset-formal.tar.gz" -C datasets
@@ -65,7 +66,7 @@ done
 
 dataset=gsv-cities                         # or msls-derived / sf-xl-derived
 export RUN_ROOT="$PWD/runs/$dataset"
-image_root="$PWD/datasets/$dataset/images" # use existing GSVCities root if available
+image_root="$PWD/datasets/$dataset/imagery" # use existing GSVCities root if available
 python scripts/configure_oipa.py --dataset "$dataset" --data-root datasets \
   --image-root "$image_root" --model-root artifacts --run-root "$RUN_ROOT"
 ```
@@ -76,7 +77,7 @@ Each protocol resolves to `datasets/<dataset>/formal/<protocol>/manifest.json`. 
 python scripts/stage_oipa_images.py --config "$RUN_ROOT/configs/oipa.yaml"
 ```
 
-For an upstream archive whose member paths match the manifest, use `--archive /path/to/upstream.zip`. For an extracted upstream tree, use `--upstream-root /path/to/upstream`. The staging command uses `archive_member` when present, checks bytes against SHA-256, and writes to the per-dataset image tree in the generated configuration. For GSV-Cities, the original `GSVCities` directory can be used directly. Use the exact released image version if a member is absent or its bytes differ.
+For a prepared image ZIP or an upstream ZIP, use `--archive /path/to/images.zip`. For an extracted tree, use `--upstream-root /path/to/upstream`. The staging command checks the canonical relative path first and then the original `archive_member`, checks bytes against SHA-256, and writes to the per-dataset image tree in the generated configuration. For GSV-Cities, the original `GSVCities` directory can be used directly. Use the exact released image version if a member is absent or its bytes differ.
 
 ## 4. Run training and evaluation
 
